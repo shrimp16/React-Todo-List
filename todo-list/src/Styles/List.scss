@@ -1,0 +1,17 @@
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    height: 30rem;
+
+    overflow: scroll;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
+
+    text-align: center;
+    margin: auto;
+    margin-top: 1rem;
+}

@@ -56,7 +56,8 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className='todo-creator'>
+        <h1>React To-Do List</h1>
         <input ref={todoInput} className="todo-input" type="text"></input>
         <button onClick={createTodo}>Create Todo</button>
       </div>

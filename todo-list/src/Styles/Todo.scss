@@ -1,0 +1,32 @@
+.todo-item {
+    display: block;
+    height: fit-content;
+    border: 2px rgba(0, 0, 255, 0.4) solid;
+    border-radius: 5px;
+    margin: 5px;
+    background-color: white;
+
+    * {
+        margin: 5px;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        width: 7rem;
+        height: 2rem;
+        font-size: 1.3rem;
+        border-radius: 7.5px;
+        border: 2px rgba(0, 0, 255, 0.4) solid;
+        background-color: rgba(0, 0, 255, 0.15);
+        transition: 0.3s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba(0, 0, 255, 0.4);
+            color: white;
+        }
+    }
+}

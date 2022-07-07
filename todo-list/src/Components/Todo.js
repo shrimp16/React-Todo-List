@@ -1,15 +1,15 @@
 import React from 'react';
 
-export default function Todo ( { todo, deleteTodo } ) {
+import '../Styles/Todo.scss';
+
+export default function Todo({ todo, deleteTodo }) {
 
     return (
-        <>
-            <div>
-                <h3>{todo.name}</h3>
-                <button onClick={() => {
-                    deleteTodo(todo.key);
-                }}>Complete</button>
-            </div>
-        </>
+        <div className='todo-item'>
+            <h3>{todo.name}</h3>
+            <button onClick={() => {
+                deleteTodo(todo.key);
+            }}>Complete</button>
+        </div>
     )
 }
