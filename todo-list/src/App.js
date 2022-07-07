@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './App.css';
 
 import List from './List';
@@ -8,6 +8,22 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   const todoInput = useRef();
+
+  useEffect(() => {
+    
+    const storedTodos = JSON.parse(localStorage.getItem('todos'));
+
+    setTodos(storedTodos);
+
+  }, [])
+
+  useEffect(() => {
+
+    if(todos.length === 0) return;
+
+    localStorage.setItem('todos', JSON.stringify(todos));
+
+  }, [todos])
 
   function createTodo() {
 
