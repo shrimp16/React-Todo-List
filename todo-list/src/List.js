@@ -2,15 +2,15 @@ import React from 'react';
 
 import Todo from './Todo';
 
-export default function List (todos) {
+export default function List ( { todos, deleteTodo }) {
 
-    console.log(todos);
 
     return (
         <>
-            {todos.todos.map((todo) => {
+            {todos.map((todo) => {
+                console.log(todo.key);
                 return (
-                    <Todo key={todo.key} todo={todo}/>
+                    <Todo key={todo.key} todo={todo} deleteTodo={deleteTodo}/>
                 )
             })}
         </>

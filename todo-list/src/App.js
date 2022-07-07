@@ -13,7 +13,7 @@ function App() {
 
     const storedTodos = JSON.parse(localStorage.getItem('todos'));
 
-    if(storedTodos === null) return;
+    if (storedTodos === null) return;
 
     setTodos(storedTodos);
 
@@ -23,19 +23,17 @@ function App() {
 
   useEffect(() => {
 
-    if (todos.length === 0) return;
-
     localStorage.setItem('todos', JSON.stringify(todos));
 
   }, [todos])
 
   function createTodo() {
 
-    if (todoInput.current.value === null) return;
+    if (todoInput.current.value === '') return;
 
     const newTodo = {
       name: todoInput.current.value,
-      key: todos.length + 1
+      key: todos.length
     }
 
     const updatedTodos = [...todos, newTodo];
@@ -46,13 +44,23 @@ function App() {
 
   }
 
+  function deleteTodo(id) {
+
+    const todosCopy = [...todos];
+
+    const filteredTodos = todosCopy.filter(todo => todo.key !== id);
+    
+    setTodos(filteredTodos);
+
+  }
+
   return (
     <>
       <div>
         <input ref={todoInput} className="todo-input" type="text"></input>
         <button onClick={createTodo}>Create Todo</button>
       </div>
-      <List todos={todos} />
+      <List todos={todos} deleteTodo={deleteTodo} />
     </>
   );
 }
