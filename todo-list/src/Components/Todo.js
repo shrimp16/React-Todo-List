@@ -1,15 +1,17 @@
 import React from 'react';
 
-import '../Styles/Todo.scss';
+import { StyledTodo } from '../Styles/Todo.styled';
+import { StyledButton } from '../Styles/Button.styled';
+import { StyledH3 } from '../Styles/Titles.styled';
 
 export default function Todo({ todo, deleteTodo }) {
 
     return (
-        <div className='todo-item'>
-            <h3>{todo.name}</h3>
-            <button onClick={() => {
+        <StyledTodo>
+            <StyledH3>{todo.name}</StyledH3>
+            <StyledButton onClick={() => {
                 deleteTodo(todo.key);
-            }}>Complete</button>
-        </div>
+            }}>Complete</StyledButton>
+        </StyledTodo>
     )
 }

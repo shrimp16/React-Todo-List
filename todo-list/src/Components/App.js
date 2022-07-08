@@ -1,5 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
-import '../Styles/App.scss';
+
+import { StyledHeader } from '../Styles/Header.styled';
+import { StyledH1 } from '../Styles/Titles.styled';
+import { StyledInput } from '../Styles/Input.styled';
+import { StyledButton } from '../Styles/Button.styled';
 
 import List from './List';
 
@@ -56,11 +60,11 @@ function App() {
 
   return (
     <>
-      <div className='todo-creator'>
-        <h1>React To-Do List</h1>
-        <input ref={todoInput} className="todo-input" type="text"></input>
-        <button onClick={createTodo}>Create Todo</button>
-      </div>
+      <StyledHeader>
+        <StyledH1>React To-Do List</StyledH1>
+        <StyledInput ref={todoInput} className="todo-input" type="text"></StyledInput>
+        <StyledButton onClick={createTodo}>Create Todo</StyledButton>
+      </StyledHeader>
       <List todos={todos} deleteTodo={deleteTodo} />
     </>
   );
