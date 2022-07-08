@@ -5,7 +5,6 @@ export const StyledHeader = styled.div`
     flex-direction: column;
     width: 30rem;
     margin: auto;
-    margin-top: 15px;
 
     * {
         margin: 5px;
