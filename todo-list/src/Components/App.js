@@ -9,21 +9,11 @@ import List from './List';
 
 function App() {
 
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(
+    JSON.parse(localStorage.getItem('todos')) || []
+  );
 
   const todoInput = useRef();
-
-  useEffect(() => {
-
-    const storedTodos = JSON.parse(localStorage.getItem('todos'));
-
-    if (storedTodos === null) return;
-
-    setTodos(storedTodos);
-
-    console.log(todos);
-
-  }, [])
 
   useEffect(() => {
 
