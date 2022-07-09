@@ -43,7 +43,7 @@ function App() {
     const todosCopy = [...todos];
 
     const filteredTodos = todosCopy.filter(todo => todo.key !== id);
-    
+
     setTodos(filteredTodos);
 
   }
